@@ -1,6 +1,6 @@
 # Machine Learning Project Report - Mushroom Classification
 
-**Your Name**  
+**Maulana P. R.**  
 **Project Domain**: Mushroom Classification
 
 ## 1. Project Overview
