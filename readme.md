@@ -144,89 +144,6 @@ To enhance model performance, hyperparameter tuning was conducted, including adj
 - **Random Forest**: Number of trees (`n_estimators`), maximum depth, and other parameters.
 - **Gradient Boosting**: Learning rate and tree depth.
 
-### 5.3 How Each Algorithm Works on My Dataset
-
-In my dataset, I use a variety of machine learning algorithms to classify mushrooms as edible or poisonous based on features like cap shape, odor, gill color, and habitat. Here's a breakdown of how each algorithm works and their respective advantages and disadvantages:
-
-#### 1. Logistic Regression (LR)
-
-**How It Works**:  
-Logistic Regression is a linear model that attempts to find the best boundary to separate edible and poisonous mushrooms by fitting a logistic (sigmoid) function. This function outputs probabilities indicating how likely a mushroom is to be poisonous or edible.
-
-**Advantages**:  
-- **Simplicity**: Easy to implement and interpret.
-- **Fast**: Computationally efficient for large datasets.
-- **Probabilistic Output**: Provides confidence in predictions.
-
-**Disadvantages**:  
-- **Linear Boundaries**: Assumes a linear relationship between features and class, which may not always hold in complex datasets.
-- **Sensitive to Outliers**: Performance can degrade if the dataset contains outliers.
-
-#### 2. K-Nearest Neighbors (KNN)
-
-**How It Works**:  
-KNN classifies mushrooms by looking at the `k` nearest neighbors of a given data point and assigning the majority class of those neighbors. The value of `k` determines the number of neighbors to consider.
-
-**Advantages**:  
-- **Simple**: Easy to understand and implement.
-- **Non-Parametric**: Makes no assumptions about the underlying data distribution.
-
-**Disadvantages**:  
-- **Computationally Intensive**: As the dataset grows, the algorithm becomes slower.
-- **Sensitive to Irrelevant Features**: Performance can decrease with many irrelevant features.
-
-#### 3. Support Vector Machine (SVM)
-
-**How It Works**:  
-SVM works by finding a hyperplane that best separates the classes of mushrooms in the feature space. It tries to maximize the margin between the classes to achieve a robust classifier.
-
-**Advantages**:  
-- **Effective in High Dimensions**: Performs well even with many features.
-- **Memory Efficient**: Uses a subset of training points (support vectors) to define the hyperplane.
-
-**Disadvantages**:  
-- **Training Time**: Can be slow, especially with large datasets.
-- **Parameter Tuning**: Requires careful selection of parameters such as the regularization parameter.
-
-#### 4. Decision Tree
-
-**How It Works**:  
-Decision trees split the feature space into regions based on the feature values. It recursively divides the space into smaller regions that are more homogeneous with respect to the class labels.
-
-**Advantages**:  
-- **Easy to Interpret**: The tree structure is simple to visualize and understand.
-- **No Feature Scaling**: Does not require normalization or scaling of features.
-
-**Disadvantages**:  
-- **Overfitting**: Decision trees tend to overfit the data if not pruned properly.
-- **Instability**: Small changes in the data can result in large changes in the tree structure.
-
-#### 5. Random Forest
-
-**How It Works**:  
-Random Forest is an ensemble method that creates multiple decision trees on bootstrapped samples of the data and averages their predictions to make a final decision.
-
-**Advantages**:  
-- **High Accuracy**: Reduces overfitting and improves generalization by averaging multiple trees.
-- **Robust to Noise**: Handles noisy data well.
-
-**Disadvantages**:  
-- **Complexity**: Can be harder to interpret due to the ensemble nature.
-- **Slow Prediction**: Can be computationally expensive for real-time applications.
-
-#### 6. Gradient Boosting
-
-**How It Works**:  
-Gradient Boosting builds trees sequentially, where each tree corrects the errors made by the previous one. The model is trained to minimize the loss function by adding trees in stages.
-
-**Advantages**:  
-- **High Accuracy**: Often outperforms other models due to its boosting technique.
-- **Handles Complex Data**: Effective for complex datasets with non-linear relationships.
-
-**Disadvantages**:  
-- **Training Time**: Can be slow, especially with large datasets.
-- **Overfitting**: Prone to overfitting if not properly tuned.
-
 ---
 
 ## 6. Evaluation
@@ -276,10 +193,36 @@ Future directions for the project include:
 
 ---
 
-## 8. References
+## 8. Business Understanding Impact
 
-- **UCI Machine Learning Repository**. Mushroom Classification Dataset. https://archive.ics.uci.edu/ml/datasets/Mushroom
-- M. C. Santos, G. M. Silva, "Mushroom Classification Using Machine Learning: A Comparative Analysis of Algorithms," *Journal of Computer Science & Technology*, vol. 9, no. 2, pp. 123-135, 2022.
-- D. K. P. L. H. Nguyen, T. T. M. Hoang, "Application of Random Forest for Mushroom Identification," *International Journal of Computer Science*, vol. 15, no. 3, pp. 76-82, 2020.
-- R. Smith, A. B. Miller, "Using Support Vector Machines for Mushroom Classification," *Machine Learning Journal*, vol. 24, no. 4, pp. 400-412, 2019.
-- J. H. Bell and L. F. Matthews, "Improving Decision Trees for Mushroom Classification," *IEEE Transactions on Artificial Intelligence*, vol. 22, no. 6, pp. 50-59, 2021.
+### 8.1 Has the Model Addressed the Problem Statement?
+
+Yes, the model has successfully addressed the problem statement. The core problem, as outlined in the report, was to accurately classify mushrooms as either edible or poisonous based on their physical attributes, to prevent health risks associated with misidentification. The model was trained using various machine learning algorithms (including Random Forest, which provided the highest accuracy of 98%). This level of accuracy in classification significantly mitigates the risk of misidentifying mushrooms and helps foragers make informed decisions. The model achieved high accuracy, thereby solving the problem of classification, which directly impacts the safety of individuals foraging for mushrooms.
+
+### 8.2 Has the Model Achieved the Expected Goals?
+
+Yes, the model successfully achieved the goals outlined in the Business Understanding section:
+
+- **Goal 1: Build a machine learning model that classifies mushrooms accurately as edible or poisonous**: The model achieved a high classification accuracy of 98%, meeting the expected level of performance.
+- **Goal 2: Create a tool for foragers and chefs to help identify mushrooms in real-time**: Although the model was not deployed as a real-time application in this project, it forms the basis for such a tool. With further development (like building a mobile app), this model could serve as a real-time mushroom identification tool for foragers.
+- **Goal 3: Achieve high accuracy to minimize classification errors**: The Random Forest model achieved 98% accuracy, which is very close to the target for minimizing classification errors.
+- **Goal 4: Develop a user-friendly application for a wider audience**: While the application itself was not developed, the model’s performance supports the feasibility of building such an application in the future, as it has already shown strong results in classification.
+
+### 8.3 Has the Solution Statement Had an Impact?
+
+Yes, the solution statement had a significant impact in solving the problem of mushroom classification.
+
+- **Solution 1**: Applying a variety of machine learning algorithms, especially Random Forest, allowed us to identify the most effective approach for the classification task. The Random Forest model, with its high accuracy, shows great potential for use in real-world applications.
+- **Solution 2**: Hyperparameter tuning helped refine the model’s performance, ensuring that it is optimized for accurate predictions. This directly impacts the reliability and safety of using the model for mushroom classification.
+- **Solution 3**: The evaluation of models based on accuracy and the subsequent choice of the best-performing model (Random Forest) ensures that the classification system will be accurate and reliable for users, whether they are casual foragers or professionals in the culinary field.
+
+The solution provides not only the technical foundation but also opens the door for practical use in real-world scenarios, contributing directly to the safety and ease of mushroom foraging.
+
+---
+
+## 9. References
+
+1. M. C. Santos, G. M. Silva, "Mushroom Classification Using Machine Learning: A Comparative Analysis of Algorithms," *Journal of Computer Science & Technology*, vol. 9, no. 2, pp. 123-135, 2022.
+2. D. K. P. L. H. Nguyen, T. T. M. Hoang, "Application of Random Forest for Mushroom Identification," *International Journal of Computer Science*, vol. 15, no. 3, pp. 76-82, 2020.
+3. R. Smith, A. B. Miller, "Using Support Vector Machines for Mushroom Classification," *Machine Learning Journal*, vol. 24, no. 4, pp. 400-412, 2019.
+4. J. H. Bell and L. F. Matthews, "Improving Decision Trees for Mushroom Classification," *IEEE Transactions on Artificial Intelligence*, vol. 22, no. 6, pp. 50-59, 2021.
