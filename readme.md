@@ -154,9 +154,7 @@ To enhance model performance, hyperparameter tuning was conducted, including adj
 
 I used **accuracy** as the primary evaluation metric:
 
-\[
-\text{Accuracy} = \frac{\text{True Positives} + \text{True Negatives}}{\text{Total Predictions}}
-\]
+![image](https://github.com/user-attachments/assets/1b620202-9625-4efa-b870-2fd728412bdb)
 
 ### 6.2 Model Comparison
 
@@ -173,7 +171,7 @@ The following table compares the accuracy of the models:
 
 The **Random Forest** and **Gradient Boosting** models provided the best performance, with the Random Forest model achieving the highest accuracy.
 
-### 6.2 Results
+### 6.3 Results
 
 The **Random Forest** model achieved an impressive accuracy of **98%**, which indicates its high reliability in classifying mushrooms accurately.
 
