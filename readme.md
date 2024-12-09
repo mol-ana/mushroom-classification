@@ -146,7 +146,19 @@ To enhance model performance, hyperparameter tuning was conducted, including adj
 - **Random Forest**: Number of trees (`n_estimators`), maximum depth, and other parameters.
 - **Gradient Boosting**: Learning rate and tree depth.
 
-### 5.3 Model Comparison
+---
+
+## 6. Evaluation
+
+### 6.1 Evaluation Metrics
+
+I used **accuracy** as the primary evaluation metric:
+
+\[
+\text{Accuracy} = \frac{\text{True Positives} + \text{True Negatives}}{\text{Total Predictions}}
+\]
+
+### 6.2 Model Comparison
 
 The following table compares the accuracy of the models:
 
@@ -161,25 +173,13 @@ The following table compares the accuracy of the models:
 
 The **Random Forest** and **Gradient Boosting** models provided the best performance, with the Random Forest model achieving the highest accuracy.
 
-### 5.4 Model Selection
-
-Based on the results, **Random Forest** was selected as the final model due to its highest accuracy of **98%**.
-
----
-
-## 6. Evaluation
-
-### 6.1 Evaluation Metrics
-
-I used **accuracy** as the primary evaluation metric:
-
-\[
-\text{Accuracy} = \frac{\text{True Positives} + \text{True Negatives}}{\text{Total Predictions}}
-\]
-
 ### 6.2 Results
 
 The **Random Forest** model achieved an impressive accuracy of **98%**, which indicates its high reliability in classifying mushrooms accurately.
+
+### 6.4 Model Selection
+
+Based on the results, **Random Forest** was selected as the final model due to its highest accuracy of **98%**.
 
 ---
 
