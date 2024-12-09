@@ -111,13 +111,17 @@ The dataset was free of missing values and duplicates, simplifying the preproces
 
 As the dataset contained only categorical features, **Label Encoding** was applied to transform them into numeric values suitable for machine learning models. This encoding was performed for each feature, where each category was assigned a unique integer.
 
-### 4.3 Data Splitting
+### 4.3 Dimensionality Reduction with PCA
+
+Principal Component Analysis (PCA) is applied to reduce the dimensionality of the feature space from 22 features to 7 components. This step is important for improving the performance of machine learning models and reducing computational complexity.
+
+**Note**: PCA helps in capturing the most important variance in the data, thereby simplifying the learning process.
+
+### 4.4 Data Splitting
 
 The dataset was split into training (80%) and test (20%) sets to ensure that model performance could be validated on unseen data.
 
-### 4.4 Feature Scaling
 
-For some algorithms, such as SVM, feature scaling was necessary. However, scaling was not required for tree-based models like Random Forest, as they are not sensitive to the scale of the data.
 
 ---
 
