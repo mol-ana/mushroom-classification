@@ -127,22 +127,78 @@ The dataset was split into training (80%) and test (20%) sets to ensure that mod
 
 ### 5.1 Models Used
 
-I trained several machine learning models:
+I trained several machine learning models to classify the mushrooms:
 
-- **Logistic Regression**
+- **Logistic Regression** (LR)
 - **K-Nearest Neighbors (KNN)**
 - **Support Vector Machine (SVM)**
 - **Decision Tree**
 - **Random Forest**
-- **Gradient Boosting**
+- **Gradient Boosting Classifier** (GBC)
 
-### 5.2 Hyperparameter Tuning
+Each model is trained on the training set (`X_train`, `y_train`). The goal is to compare the performance of these models to select the best one for our classification task.
+
+### 5.2 Model Parameters
+
+**Model Parameters**:
+
+- For **Logistic Regression**: Default parameters were used.
+- For **KNN**: Default parameter `n_neighbors=5` was used.
+- For **SVC**: Default `C=1.0` and `kernel='rbf'` were used.
+- For **Decision Tree**: Default `max_depth=None` was used.
+- For **Random Forest**: Default `n_estimators=100` was used.
+- For **Gradient Boosting**: Default `n_estimators=100` and `learning_rate=0.1` were used.
+
+### 5.3 Hyperparameter Tuning
 
 To enhance model performance, hyperparameter tuning was conducted, including adjustments for:
 
 - **KNN**: Number of neighbors.
 - **Random Forest**: Number of trees (`n_estimators`), maximum depth, and other parameters.
 - **Gradient Boosting**: Learning rate and tree depth.
+
+### 5.4 How the Algorithms Work
+
+#### **Logistic Regression (LR)**
+
+Logistic Regression is a linear model used for binary classification tasks. It works by finding a linear relationship between the input features and the output label. The model applies the logistic function to the linear combination of input features to predict the probability of a mushroom being edible (class "e") or poisonous (class "p"). The model is trained by optimizing the coefficients of the features to minimize the error in classification.
+
+- **How it works in the mushroom classification**: The logistic regression model uses the numerical representation of the mushroom's characteristics (such as cap shape, odor, gill spacing, etc.) to predict whether the mushroom is edible or poisonous. It outputs a probability score, which is then mapped to one of the two classes.
+
+#### **K-Nearest Neighbors (KNN)**
+
+K-Nearest Neighbors (KNN) is a simple, non-parametric algorithm that classifies a mushroom based on the majority class of its nearest neighbors. The algorithm calculates the distance between the data point (mushroom) and all other points in the dataset. It then selects the "k" closest samples and assigns the class label based on the majority class among the k neighbors.
+
+- **How it works in the mushroom classification**: For each mushroom sample, the algorithm looks at the k closest mushrooms in the feature space. By majority voting among these neighbors, the classification is determined. For example, if most of the nearest neighbors are labeled as "poisonous," the mushroom in question will be classified as poisonous.
+
+#### **Support Vector Machine (SVC)**
+
+Support Vector Machine (SVC) is a supervised learning algorithm that finds the optimal hyperplane that separates the data into two classes. SVM works by transforming the input features into a higher-dimensional space using the kernel trick and then finds the hyperplane that maximizes the margin between the two classes. In the case of mushroom classification, this involves finding a boundary that best separates edible mushrooms from poisonous ones.
+
+- **How it works in the mushroom classification**: SVC attempts to draw a line (or hyperplane) that divides the mushrooms into two categories (edible or poisonous) with as wide a gap as possible between them. For more complex data, it uses kernels to map the features into higher dimensions where the separation between the classes is clearer.
+
+#### **Decision Tree (DT)**
+
+A Decision Tree is a hierarchical model that splits the dataset into branches based on feature values to make a classification decision. At each node, a feature is chosen to split the data, based on its ability to maximize the information gain (using measures like Gini Impurity or Entropy). The tree is built recursively until it reaches a stopping criterion, such as maximum depth or minimum samples per leaf.
+
+- **How it works in the mushroom classification**: The decision tree classifies mushrooms by evaluating different features at each decision node (e.g., cap shape, odor). If the feature’s value leads to a more significant reduction in uncertainty (measured by metrics like Gini Impurity), it is chosen as the splitting criterion. The tree continues until it reaches a leaf node, which gives the final classification (edible or poisonous).
+
+#### **Random Forest (RF)**
+
+Random Forest is an ensemble learning method that constructs multiple decision trees and combines their predictions. It creates each tree by selecting random subsets of the features and training the trees on bootstrapped subsets of the training data. The final prediction is made by taking the majority vote from all individual trees.
+
+- **How it works in the mushroom classification**: Random Forest builds many decision trees, each trained on a random sample of the data and a random subset of features. When classifying a new mushroom, the forest makes a prediction by aggregating the results from all trees. The majority vote across all trees determines whether the mushroom is classified as edible or poisonous.
+
+#### **Gradient Boosting Classifier (GBC)**
+
+Gradient Boosting is an ensemble method that builds decision trees sequentially. Each new tree is trained to correct the errors made by the previous trees in the ensemble. Trees are added one by one, and the model focuses on the samples that were misclassified by previous trees. The final model is the weighted sum of all individual trees.
+
+- **How it works in the mushroom classification**: Gradient Boosting constructs a sequence of decision trees where each tree corrects the mistakes of the previous one. The trees are trained on the residuals (errors) of the predictions made by the earlier trees, which allows the model to learn complex patterns. The model then aggregates the results of all trees to make the final classification.
+
+---
+
+These algorithms were all trained and tested on the mushroom dataset to classify mushrooms based on their physical characteristics. After evaluating each model's performance, the Random Forest and Gradient Boosting models emerged as the top performers, achieving high accuracy in predicting whether a mushroom is edible or poisonous.
+
 
 ---
 
@@ -220,9 +276,3 @@ The solution provides not only the technical foundation but also opens the door 
 
 ---
 
-## 9. References
-
-1. M. C. Santos, G. M. Silva, "Mushroom Classification Using Machine Learning: A Comparative Analysis of Algorithms," *Journal of Computer Science & Technology*, vol. 9, no. 2, pp. 123-135, 2022.
-2. D. K. P. L. H. Nguyen, T. T. M. Hoang, "Application of Random Forest for Mushroom Identification," *International Journal of Computer Science*, vol. 15, no. 3, pp. 76-82, 2020.
-3. R. Smith, A. B. Miller, "Using Support Vector Machines for Mushroom Classification," *Machine Learning Journal*, vol. 24, no. 4, pp. 400-412, 2019.
-4. J. H. Bell and L. F. Matthews, "Improving Decision Trees for Mushroom Classification," *IEEE Transactions on Artificial Intelligence*, vol. 22, no. 6, pp. 50-59, 2021.
