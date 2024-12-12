@@ -51,8 +51,7 @@ The project aims to:
 To achieve the goals outlined, the following solutions were implemented:
 
 - **Solution 1**: I applied a variety of machine learning algorithms such as Logistic Regression, KNN, SVM, Decision Trees, Random Forest, and Gradient Boosting for comparison.
-- **Solution 2**: Hyperparameter tuning techniques (grid search and random search) were utilized to optimize the models.
-- **Solution 3**: Model performance was evaluated based on accuracy metrics.
+- **Solution 2**: Model performance was evaluated based on accuracy metrics.
 
 ---
 
@@ -149,15 +148,7 @@ Each model is trained on the training set (`X_train`, `y_train`). The goal is to
 - For **Random Forest**: Default `n_estimators=100` was used.
 - For **Gradient Boosting**: Default `n_estimators=100` and `learning_rate=0.1` were used.
 
-### 5.3 Hyperparameter Tuning
-
-To enhance model performance, hyperparameter tuning was conducted, including adjustments for:
-
-- **KNN**: Number of neighbors.
-- **Random Forest**: Number of trees (`n_estimators`), maximum depth, and other parameters.
-- **Gradient Boosting**: Learning rate and tree depth.
-
-### 5.4 How the Algorithms Work
+### 5.3 How the Algorithms Work
 
 #### **Logistic Regression (LR)**
 
@@ -216,28 +207,28 @@ The following table compares the accuracy of the models:
 
 | Model              | Accuracy (%) |
 |--------------------|--------------|
-| Logistic Regression| 96%          |
-| K-Nearest Neighbors| 97%          |
-| Support Vector Machine | 97%      |
-| Decision Tree      | 94%          |
-| Random Forest      | 98%          |
-| Gradient Boosting  | 96%          |
+| Logistic Regression| 83.4%          |
+| K-Nearest Neighbors| 98.3%          |
+| Support Vector Machine | 95.2%      |
+| Decision Tree      | 97.8%          |
+| Random Forest      | 99.7%          |
+| Gradient Boosting  | 93.8%          |
 
-The **Random Forest** and **Gradient Boosting** models provided the best performance, with the Random Forest model achieving the highest accuracy.
+The **Random Forest** and **K-Nearest Neighbors** models provided the best performance, with the Random Forest model achieving the highest accuracy.
 
 ### 6.3 Results
 
-The **Random Forest** model achieved an impressive accuracy of **98%**, which indicates its high reliability in classifying mushrooms accurately.
+The **Random Forest** model achieved an impressive accuracy of **99.7%**, which indicates its high reliability in classifying mushrooms accurately.
 
 ### 6.4 Model Selection
 
-Based on the results, **Random Forest** was selected as the final model due to its highest accuracy of **98%**.
+Based on the results, **Random Forest** was selected as the final model due to its highest accuracy of **99.7%**.
 
 ---
 
 ## 7. Conclusion
 
-The **Random Forest** model demonstrated excellent performance, achieving an accuracy of **98%** in mushroom classification. This model can effectively aid mushroom foragers in distinguishing between edible and poisonous mushrooms, potentially preventing health risks associated with misidentification.
+The **Random Forest** model demonstrated excellent performance, achieving an accuracy of **99.7%** in mushroom classification. This model can effectively aid mushroom foragers in distinguishing between edible and poisonous mushrooms, potentially preventing health risks associated with misidentification.
 
 ### 7.1 Future Work
 
@@ -269,8 +260,7 @@ Yes, the model successfully achieved the goals outlined in the Business Understa
 Yes, the solution statement had a significant impact in solving the problem of mushroom classification.
 
 - **Solution 1**: Applying a variety of machine learning algorithms, especially Random Forest, allowed us to identify the most effective approach for the classification task. The Random Forest model, with its high accuracy, shows great potential for use in real-world applications.
-- **Solution 2**: Hyperparameter tuning helped refine the model’s performance, ensuring that it is optimized for accurate predictions. This directly impacts the reliability and safety of using the model for mushroom classification.
-- **Solution 3**: The evaluation of models based on accuracy and the subsequent choice of the best-performing model (Random Forest) ensures that the classification system will be accurate and reliable for users, whether they are casual foragers or professionals in the culinary field.
+- **Solution 2**: The evaluation of models based on accuracy and the subsequent choice of the best-performing model (Random Forest) ensures that the classification system will be accurate and reliable for users, whether they are casual foragers or professionals in the culinary field.
 
 The solution provides not only the technical foundation but also opens the door for practical use in real-world scenarios, contributing directly to the safety and ease of mushroom foraging.
 
