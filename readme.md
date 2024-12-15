@@ -5,17 +5,17 @@
 
 ---
 
-## 1. Project Overview
+## Project Overview
 
-### 1.1 Background
+### Background
 
-Mushroom foraging is a popular activity, but it comes with substantial risks due to the challenge of distinguishing between edible and poisonous mushrooms. Many poisonous mushrooms look similar to edible ones, which can lead to severe health issues or even death. This project leverages machine learning to classify mushrooms as edible or poisonous based on their physical characteristics, providing a reliable tool for foragers and minimizing the risks of accidental poisoning.
+Mushroom foraging is a popular activity, but it comes with substantial risks due to the challenge of distinguishing between edible and poisonous mushrooms. Many poisonous mushrooms look similar to edible ones, which can lead to severe health issues or even death. This project leverages machine learning to classify mushrooms as edible or poisonous based on their     physical characteristics, providing a reliable tool for foragers and minimizing the risks of accidental poisoning.
 
-### 1.2 Importance of the Problem
+### Importance of the Problem
 
 The misidentification of mushrooms, especially when foraging for wild varieties, remains a significant public health concern. Since many edible and poisonous mushrooms share similar morphological characteristics, an automated system capable of distinguishing between them could help prevent accidental poisoning, making it easier and safer for people to forage mushrooms in the wild.
 
-### 1.3 Related Research
+### Related Research
 
 Various machine learning techniques, including decision trees, support vector machines (SVM), and ensemble methods, have been explored for mushroom classification. These methods rely on multiple features such as cap shape, odor, and habitat to predict whether a mushroom is edible or poisonous.
 
@@ -27,9 +27,9 @@ Various machine learning techniques, including decision trees, support vector ma
 
 ---
 
-## 2. Business Understanding
+## Business Understanding
 
-### 2.1 Problem Statements
+### Problem Statements
 
 The core problem addressed is the accurate classification of mushrooms as either edible or poisonous. Specific challenges include:
 
@@ -37,7 +37,7 @@ The core problem addressed is the accurate classification of mushrooms as either
 - **Challenge 2**: The increasing popularity of mushroom foraging, especially among non-experts, leading to more cases of misidentification.
 - **Challenge 3**: The severe health risks, including poisoning or death, from consuming poisonous mushrooms.
 
-### 2.2 Goals
+### Goals
 
 The project aims to:
 
@@ -46,24 +46,24 @@ The project aims to:
 - **Goal 3**: Achieve high accuracy to minimize classification errors.
 - **Goal 4**: Develop a user-friendly application for a wider audience.
 
-### 2.3 Solution Statement
+### Solution Statement
 
 To achieve the goals outlined, the following solutions were implemented:
 
-- **Solution 1**: I applied a variety of machine learning algorithms such as Logistic Regression, KNN, SVM, Decision Trees, Random Forest, and Gradient Boosting for comparison.
+- **Solution 1**: Variety of machine learning algorithms is applied such as Logistic Regression, KNN, SVM, Decision Trees, Random Forest, and Gradient Boosting for comparison.
 - **Solution 2**: Model performance was evaluated based on accuracy metrics.
 
 ---
 
-## 3. Data Understanding
+## Data Understanding
 
-### 3.1 Data Source
+### Data Source
 
 The dataset used is the Mushroom Classification dataset from the UCI Machine Learning Repository, which contains 8124 mushroom samples. Each sample has 22 features, which describe different characteristics of the mushroom, such as cap shape, odor, and habitat, along with a class label indicating whether the mushroom is edible (e) or poisonous (p).
 
 [Download the Mushroom Dataset](https://archive.ics.uci.edu/ml/datasets/Mushroom)
 
-### 3.2 Features in the Dataset
+### Features in the Dataset
 
 The dataset includes a wide range of categorical features describing the characteristics of mushrooms. These features are as follows:
 
@@ -90,43 +90,35 @@ The dataset includes a wide range of categorical features describing the charact
 - **population**: The population density (e.g., abundant = a, clustered = c, numerous = n, scattered = s, several = v, solitary = y).
 - **habitat**: The habitat where the mushroom is found (e.g., grasses = g, leaves = l, meadows = m, paths = p, urban = u, waste = w, woods = d).
 
-### 3.3 Exploratory Data Analysis (EDA)
-
-I performed an initial exploration of the data, which included visualizations and summary statistics to uncover any patterns, trends, or anomalies in the dataset. Some of the key findings include:
-
-- **Distribution of Classes**: The dataset is balanced, with an approximately equal number of edible and poisonous mushrooms.
-- **Correlation**: Certain features, like `cap-color`, `odor`, and `gill-color`, show high correlations with the target class (edible or poisonous).
-- **Feature Interdependencies**: Pair plots and heatmaps revealed some relationships between features like `cap-color` and `gill-color`, which are often indicative of the mushroom's edibility.
-
 ---
 
-## 4. Data Preparation
+## Data Preparation
 
-### 4.1 Data Cleaning
+### Data Cleaning
 
 The dataset was free of missing values and duplicates, simplifying the preprocessing task. The only issue that required attention was encoding the categorical features into numerical values.
 
-### 4.2 Feature Encoding
+### Feature Encoding
 
 As the dataset contained only categorical features, **Label Encoding** was applied to transform them into numeric values suitable for machine learning models. This encoding was performed for each feature, where each category was assigned a unique integer.
 
-### 4.3 Dimensionality Reduction with PCA
+### Dimensionality Reduction with PCA
 
 Principal Component Analysis (PCA) is applied to reduce the dimensionality of the feature space from 22 features to 7 components. This step is important for improving the performance of machine learning models and reducing computational complexity.
 
 **Note**: PCA helps in capturing the most important variance in the data, thereby simplifying the learning process.
 
-### 4.4 Data Splitting
+### Data Splitting
 
 The dataset was split into training (80%) and test (20%) sets to ensure that model performance could be validated on unseen data.
 
 ---
 
-## 5. Modeling
+## Modeling
 
-### 5.1 Models Used
+### Models Used
 
-I trained several machine learning models to classify the mushrooms:
+Several machine learning models were trained to classify the mushrooms:
 
 - **Logistic Regression** (LR)
 - **K-Nearest Neighbors (KNN)**
@@ -137,7 +129,7 @@ I trained several machine learning models to classify the mushrooms:
 
 Each model is trained on the training set (`X_train`, `y_train`). The goal is to compare the performance of these models to select the best one for our classification task.
 
-### 5.2 Model Parameters
+### Model Parameters
 
 **Model Parameters**:
 
@@ -148,7 +140,7 @@ Each model is trained on the training set (`X_train`, `y_train`). The goal is to
 - For **Random Forest**: Default `n_estimators=100` was used.
 - For **Gradient Boosting**: Default `n_estimators=100` and `learning_rate=0.1` were used.
 
-### 5.3 How the Algorithms Work
+### How the Algorithms Work
 
 #### **Logistic Regression (LR)**
 
@@ -193,15 +185,15 @@ These algorithms were all trained and tested on the mushroom dataset to classify
 
 ---
 
-## 6. Evaluation
+## Evaluation
 
-### 6.1 Evaluation Metrics
+### Evaluation Metrics
 
-I used **accuracy** as the primary evaluation metric:
+**accuracy** is used as the primary evaluation metric:
 
 ![image](https://github.com/user-attachments/assets/1b620202-9625-4efa-b870-2fd728412bdb)
 
-### 6.2 Model Comparison
+### Model Comparison
 
 The following table compares the accuracy of the models:
 
@@ -216,21 +208,21 @@ The following table compares the accuracy of the models:
 
 The **Random Forest** and **K-Nearest Neighbors** models provided the best performance, with the Random Forest model achieving the highest accuracy.
 
-### 6.3 Results
+### Results
 
 The **Random Forest** model achieved an impressive accuracy of **99.7%**, which indicates its high reliability in classifying mushrooms accurately.
 
-### 6.4 Model Selection
+### Model Selection
 
 Based on the results, **Random Forest** was selected as the final model due to its highest accuracy of **99.7%**.
 
 ---
 
-## 7. Conclusion
+## Conclusion
 
 The **Random Forest** model demonstrated excellent performance, achieving an accuracy of **99.7%** in mushroom classification. This model can effectively aid mushroom foragers in distinguishing between edible and poisonous mushrooms, potentially preventing health risks associated with misidentification.
 
-### 7.1 Future Work
+### Future Work
 
 Future directions for the project include:
 
@@ -240,22 +232,22 @@ Future directions for the project include:
 
 ---
 
-## 8. Business Understanding Impact
+## Business Understanding Impact
 
-### 8.1 Has the Model Addressed the Problem Statement?
+### Has the Model Addressed the Problem Statement?
 
-Yes, the model has successfully addressed the problem statement. The core problem, as outlined in the report, was to accurately classify mushrooms as either edible or poisonous based on their physical attributes, to prevent health risks associated with misidentification. The model was trained using various machine learning algorithms (including Random Forest, which provided the highest accuracy of 98%). This level of accuracy in classification significantly mitigates the risk of misidentifying mushrooms and helps foragers make informed decisions. The model achieved high accuracy, thereby solving the problem of classification, which directly impacts the safety of individuals foraging for mushrooms.
+Yes, the model has successfully addressed the problem statement. The core problem, as outlined in the report, was to accurately classify mushrooms as either edible or poisonous based on their physical attributes, to prevent health risks associated with misidentification. The model was trained using various machine learning algorithms (including Random Forest, which provided the highest accuracy of 99.7%). This level of accuracy in classification significantly mitigates the risk of misidentifying mushrooms and helps foragers make informed decisions. The model achieved high accuracy, thereby solving the problem of classification, which directly impacts the safety of individuals foraging for mushrooms.
 
-### 8.2 Has the Model Achieved the Expected Goals?
+### Has the Model Achieved the Expected Goals?
 
 Yes, the model successfully achieved the goals outlined in the Business Understanding section:
 
-- **Goal 1: Build a machine learning model that classifies mushrooms accurately as edible or poisonous**: The model achieved a high classification accuracy of 98%, meeting the expected level of performance.
+- **Goal 1: Build a machine learning model that classifies mushrooms accurately as edible or poisonous**: The model achieved a high classification accuracy of 99.7%, meeting the expected level of performance.
 - **Goal 2: Create a tool for foragers and chefs to help identify mushrooms in real-time**: Although the model was not deployed as a real-time application in this project, it forms the basis for such a tool. With further development (like building a mobile app), this model could serve as a real-time mushroom identification tool for foragers.
-- **Goal 3: Achieve high accuracy to minimize classification errors**: The Random Forest model achieved 98% accuracy, which is very close to the target for minimizing classification errors.
+- **Goal 3: Achieve high accuracy to minimize classification errors**: The Random Forest model achieved 99.7% accuracy, which is very close to the target for minimizing classification errors.
 - **Goal 4: Develop a user-friendly application for a wider audience**: While the application itself was not developed, the model’s performance supports the feasibility of building such an application in the future, as it has already shown strong results in classification.
 
-### 8.3 Has the Solution Statement Had an Impact?
+### Has the Solution Statement Had an Impact?
 
 Yes, the solution statement had a significant impact in solving the problem of mushroom classification.
 
